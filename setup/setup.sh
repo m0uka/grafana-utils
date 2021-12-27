@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# delete old files
+rm prometheus.yml
+rm docker-compose.yml
+
+# shutdown docker-compose if turned on
+docker-compose down
+
 # download config
 curl -o prometheus.yml https://raw.githubusercontent.com/m0uka/grafana-utils/master/setup/prometheus.yml
 
