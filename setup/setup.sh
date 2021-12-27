@@ -12,4 +12,10 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/m0uka/grafana-utils
 # setup docker compose
 docker-compose up -d
 
-echo "Successfully deployed."
+echo "Successfully deployed prometheus."
+
+apt install prometheus-node-exporter -y
+service prometheus-node-exporter start
+
+echo "Successfully deployed node-exporter."
+echo "Finished!"
